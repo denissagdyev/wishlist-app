@@ -258,7 +258,7 @@ export function WishlistItems({ wishlistId, isOwner }: WishlistItemsProps) {
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "reservations" },
-        (payload) => {
+        (payload: any) => {
           const newRecord = payload.new as Reservation | null;
           const oldRecord = payload.old as Reservation | null;
 
@@ -277,7 +277,7 @@ export function WishlistItems({ wishlistId, isOwner }: WishlistItemsProps) {
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "contributions" },
-        (payload) => {
+        (payload: any) => {
           const newRecord = payload.new as Contribution | null;
           const oldRecord = payload.old as Contribution | null;
 
@@ -296,7 +296,7 @@ export function WishlistItems({ wishlistId, isOwner }: WishlistItemsProps) {
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "items" },
-        (payload) => {
+        (payload: any) => {
           const newItem = payload.new as Item | null;
           const oldItem = payload.old as Item | null;
 
